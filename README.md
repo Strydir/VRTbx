@@ -2,7 +2,8 @@
 Files and Utilities for VRToolbox
 
 
-Welcome to my Steam Shortcut Loader for VRToolbox
+
+1)Welcome to my Steam Shortcut Loader for VRToolbox
 
 This is a simplified version of CogentRifter's Home Loader, found here:  https://github.com/CogentHub/HomeLoader.   With his permission, I have modified it for my needs.
 
@@ -26,4 +27,6 @@ Known bugs/issues:
 4) Needs Oculus game support.
 
 
-For Skymaps, go to the "Skymaps" folder and download the zip file.
+
+
+2)For Skymaps, go to the "Skymaps" folder and download the zip file.
