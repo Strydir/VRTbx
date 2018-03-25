@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Date</title>
+  <link href="css/clock.css" rel="stylesheet" type="text/css">
+</head>
+
+<script>
+
+function getMonthStr() { 
+   var suffix = "1";
+   var m = new Date();
+   var thismonth = new Array(12);
+   thismonth[0] = "January";
+   thismonth[1] = "February";
+   thismonth[2] = "March";
+   thismonth[3] = "April"
+   thismonth[4] = "May";
+   thismonth[5] = "June";
+   thismonth[6] = "July";
+   thismonth[7] = "August";
+   thismonth[8] = "September";
+   thismonth[9] = "October";
+   thismonth[10] = "November";
+   thismonth[11] = "December";
+   var nn = thismonth[m.getMonth()];
+   var nd = m.getDate();
+   var sx = nd.toString();
+   	if (sx == "1" || sx == "21" || sx == "31")
+		{suffix = "st";}
+      else if (sx == "2" || sx == "22")
+		{suffix = "nd";}
+	  else if (sx == "3" || sx == "23")
+		{suffix = "rd";}
+	  else
+		{suffix = "th";}  
+	var nt = nn + " " + nd + suffix;
+    return nt;
+   }   
+	
+var myTimer = setInterval(setClock,1000);
+function setClock(){	
+	   document.getElementById("theDate").innerHTML = getMonthStr();
+	   }
+	   
+</script>
+
+<body>
+<div id="myCal">
+   <h1 id="theDate"></h1>
+</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Clock1</title>
+  <link href="css/clock.css" rel="stylesheet" type="text/css">
+  </head>
+
+<script>
+function getDayStr() { 
+   var y = new Date();
+   var weekday = new Array(7);
+   weekday[0] = "Sunday";
+   weekday[1] = "Monday";
+   weekday[2] = "Tuesday";
+   weekday[3] = "Wednesday"
+   weekday[4] = "Thursday";
+   weekday[5] = "Friday";
+   weekday[6] = "Saturday";
+   var n = weekday[y.getDay()];
+   return n;
+   }
+   
+function getTimeStr() {
+       var dt = new Date();
+       var d = dt.toLocaleDateString();
+       var t = dt.toLocaleTimeString();
+       t = t.replace(/\u200E/g, '');
+       t = t.replace(/^([^\d]*\d{1,2}:\d{1,2}):\d{1,2}([^\d]*)$/, '$1$2');
+       var time1 = t;
+       return time1;
+	   /* Thank You! To ArturG from StackOverFlow for this code: https://stackoverflow.com/users/1604457/arturg */
+       }
+	
+function getDateStr() {
+      var dt = new Date();
+      var d = dt.toLocaleDateString();
+      var t = dt.toLocaleTimeString();
+      t = t.replace(/\u200E/g, '');
+      t = t.replace(/^([^\d]*\d{1,2}:\d{1,2}):\d{1,2}([^\d]*)$/, '$1$2');
+      var date1 = d;
+      return date1;
+	  /* Thank You! To ArturG from StackOverFlow for this code: https://stackoverflow.com/users/1604457/arturg */
+      }
+      
+var myTimer = setInterval(setClock,1000);
+function setClock(){	
+	   document.getElementById("today").innerHTML = getDayStr();
+	   document.getElementById("myDate").innerHTML = getDateStr();
+	   document.getElementById("myClock").innerHTML = getTimeStr();
+	   }
+	   
+</script>
+
+<body>
+<div id="clockback">
+   <h1 id="today"></h1>
+   <center><p id="myDate"></p></center>
+   <center><p id="myClock">HH:MM</p></center>
+</div>
+</body>
+</html>
